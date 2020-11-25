@@ -15,13 +15,28 @@ public class CarTest {
     @Before
     public void setUp() {
         engine = new Engine(1.6, 260, "Diesel");
-        doors = new Doors(5);
-        seats = new Seats(4);
-        car = new Car(engine, doors, seats, "diesel", "Ford");
+        doors = new Doors(4);
+        seats = new Seats(5);
+        car = new Car(engine, doors, seats, "diesel", "Ford", "red", 100);
     }
 
     @Test
     public void getEngineSize(){
         assertEquals(1.6, car.getEngine().getCapacity(), 0.0);
+    }
+
+    @Test
+    public void getDoorsNumber() {
+        assertEquals(4, car.getDoors().getDoorCount());
+    }
+
+    @Test
+    public void getHorses(){
+        assertEquals(260, car.getEngine().getHorsePower());
+    }
+
+    @Test
+    public void hasModelType() {
+        assertEquals("Ford", car.getModel());
     }
 }
