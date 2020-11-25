@@ -40,7 +40,18 @@ public class DealerTest {
     }
 
     @Test
-    publ
+    public void dealerCanGetThatPaper(){
+        dealership.getPayment(vehicle.getPrice());
+        assertEquals(100, dealership.getTill(), 0.00);
+
+    }
+
+    @Test
+    public void dealerCanBuyCar(){
+        dealership.buyVehicle(vehicle);
+        assertEquals(100, dealership.getTill(), 0.00);
+        assertEquals(1, dealership.getStock());
+    }
 
 
 }
